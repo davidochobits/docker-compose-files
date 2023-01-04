@@ -1,0 +1,17 @@
+version: '2'
+
+volumes:
+  inspircd:
+
+services:
+
+  inspircd:
+    image: inspircd/inspircd-docker
+    env_file:
+      - .env
+    ports:
+      - 6667:6667
+      - 6697:6697
+    restart: always
+    volumes:
+            - inspircd:/inspircd/conf
