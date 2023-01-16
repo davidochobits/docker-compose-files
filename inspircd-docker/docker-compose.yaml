@@ -15,3 +15,11 @@ services:
     restart: always
     volumes:
             - inspircd:/inspircd/conf
+  anope:
+    image: anope/anope
+    env_file:
+      - .env_anope
+    depends_on:
+      - inspircd
+    restart: always
+    
